@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center md-4">Previsão do Tempo</h1>
+          <form #cidadeForm="ngForm" (ngSubmit) ="adicionarCidade(cidadeForm)">
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                name="cidade"
+                placeholder="Insira uma cidade"
+                #cidade
+                [(ngModel)]="cidade.cidade">
+            </div>
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-success btn-md">
+              Buscar
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-10">
+          <h1 class="text-center md-6">Tempo hoje</h1>
+        </div>
+      </div>
+    </div>
+    <app-previsao class="col-12 col-md-6 mb-2" *ngFor="let previsao of previsoes" [previsao]="previsao">
+    </app-previsao>
+     </div>
+</div>
